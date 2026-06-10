@@ -1,0 +1,22 @@
+spring:
+    cloud:
+        gateway:
+            routes:
+                - id: user-service
+                  uri: lb://user-service
+                  predicates:
+                    - Path=/api/users/**
+                - id: product-service
+                  uri: lb://product-service
+                  predicates:
+                    - Path=/api/products/**
+
+server:
+    port: 8888
+
+eureka:
+    client:
+        service-url:
+            defaultZone: http://test.turkcell.com:8761/eureka/
+        fetch-registry: true
+        register-with-eureka: true
