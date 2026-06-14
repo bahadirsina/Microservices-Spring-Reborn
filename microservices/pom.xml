@@ -25,6 +25,7 @@
         <module>config-server</module>
         <module>cart-service</module>
         <module>order-service</module>
+        <module>bff-server</module>
     </modules>
 
     <properties>
